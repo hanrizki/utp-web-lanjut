@@ -28,17 +28,19 @@
                                 <td>{{ $item->address }}</td>
                                 <td>{{ $item->mobile }}</td>
                                 <td>
-                                    <a href="{{ url('/student/' . $item->id) }}" title="View Student"
-                                        class="btn btn-info btn-sm me-1">View</a>
+                                    <a href="{{ url('/students/' . $item->id) }}" title="View Student">
+                                        View
+                                    </a>
+                                    <a href="{{ url('/students/' . $item->id . '/edit') }}" title="Edit Student">
+                                        Edit
+                                    </a>
 
-                                    <a href="{{ url('/student/' . $item->id . '/edit') }}" title="Edit Student"
-                                        class="btn btn-primary btn-sm me-1">Edit</a>
-
-                                    <form method="POST" action="{{ url('/student', $item->id) }}" style="display:inline;">
+                                    <form method="POST" action="{{ url('/students', $item->id) }}" style="display:inline;">
                                         {{ method_field('DELETE') }}
                                         {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger btn-sm"
-                                            title="Delete Student">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Student">
+                                            <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

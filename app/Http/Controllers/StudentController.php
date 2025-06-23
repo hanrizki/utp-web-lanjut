@@ -42,17 +42,19 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): View
     {
-        //
+        $students = Student::find($id);
+        return view('students.show')->with('students', $students);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $students = Student::find($id);
+        return view('students.edit')->with('students', $students);
     }
 
     /**
